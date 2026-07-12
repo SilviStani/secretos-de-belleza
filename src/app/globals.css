@@ -1,26 +1,261 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─────────────────────────────────────────────────────────────────────────────
+   FONT REFERENCES
+   next/font injects --font-inter and --font-playfair as CSS variables on <html>.
+   @theme inline tells Tailwind to inline the var() into utility classes directly
+   (no intermediate CSS custom property emitted).
+───────────────────────────────────────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─────────────────────────────────────────────────────────────────────────────
+   DESIGN SYSTEM TOKENS
+   All direct values use @theme (emits CSS custom properties + utility classes).
+   Naming conventions drive Tailwind v4 utility generation:
+     --color-*    → bg-*, text-*, border-*, ring-*
+     --text-*     → text-* (font-size + modifiers)
+     --spacing-*  → p-*, m-*, gap-*, w-*, h-*, inset-*
+     --radius-*   → rounded-*
+     --shadow-*   → shadow-*
+     --animate-*  → animate-*
+───────────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* ── Primary (dusty rose) ─────────────────────────────────────────────── */
+  --color-primary: #7b5455;
+  --color-primary-hover: #613d3e;
+  --color-primary-container: #f4c2c2;
+  --color-primary-fixed: #ffdad9;
+  --color-primary-fixed-dim: #ecbaba;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed: #2f1314;
+  --color-on-primary-fixed-variant: #613d3e;
+  --color-on-primary-container: #734e4e;
+  --color-inverse-primary: #ecbaba;
+
+  /* ── Secondary (warm grey) ────────────────────────────────────────────── */
+  --color-secondary: #5f5e5e;
+  --color-secondary-container: #e4e2e1;
+  --color-secondary-fixed: #e4e2e1;
+  --color-secondary-fixed-dim: #c8c6c6;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-fixed: #1b1c1c;
+  --color-on-secondary-fixed-variant: #474747;
+  --color-on-secondary-container: #656464;
+
+  /* ── Tertiary (sage green accent) ─────────────────────────────────────── */
+  --color-tertiary: #5e604d;
+  --color-tertiary-container: #cfd0b8;
+  --color-tertiary-fixed: #e4e4cc;
+  --color-tertiary-fixed-dim: #c8c8b0;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-fixed: #1b1d0e;
+  --color-on-tertiary-fixed-variant: #474836;
+  --color-on-tertiary-container: #585946;
+
+  /* ── Surface hierarchy ────────────────────────────────────────────────── */
+  --color-surface: #faf9f6;
+  --color-surface-bright: #faf9f6;
+  --color-surface-dim: #dbdad7;
+  --color-surface-variant: #e3e2e0;
+  --color-surface-tint: #7b5455;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f3f1;
+  --color-surface-container: #efeeeb;
+  --color-surface-container-high: #e9e8e5;
+  --color-surface-container-highest: #e3e2e0;
+  --color-on-surface: #1a1c1a;
+  --color-on-surface-variant: #504444;
+  --color-inverse-surface: #2f312f;
+  --color-inverse-on-surface: #f2f1ee;
+
+  /* ── Background ───────────────────────────────────────────────────────── */
+  --color-background: #faf9f6;
+  --color-on-background: #1a1c1a;
+
+  /* ── Borders ──────────────────────────────────────────────────────────── */
+  --color-outline: #827473;
+  --color-outline-variant: #d4c2c2;
+
+  /* ── Error ────────────────────────────────────────────────────────────── */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* ── Typography Scale ─────────────────────────────────────────────────── */
+  --text-label-caps: 0.75rem;
+  --text-label-caps--line-height: 1;
+  --text-label-caps--letter-spacing: 0.1em;
+  --text-label-caps--font-weight: 600;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.5;
+  --text-body-sm--font-weight: 400;
+
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--letter-spacing: -0.01em;
+  --text-body-lg--font-weight: 400;
+
+  --text-headline-sm: 1.5rem;
+  --text-headline-sm--line-height: 1.4;
+  --text-headline-sm--font-weight: 500;
+
+  --text-headline-md: 2rem;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 500;
+
+  --text-display-mob: 2rem;
+  --text-display-mob--line-height: 1.2;
+  --text-display-mob--font-weight: 600;
+
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 600;
+
+  /* ── Spacing ──────────────────────────────────────────────────────────── */
+  --spacing-section-desktop: 7.5rem;  /* 120px — section vertical padding */
+  --spacing-section-mobile: 4rem;     /* 64px  — section vertical padding mobile */
+  --spacing-grid-gutter: 1.5rem;      /* 24px  — gap between grid columns */
+  --spacing-grid-margin: 1.5rem;      /* 24px  — horizontal page margin */
+
+  /* ── Border Radius ────────────────────────────────────────────────────── */
+  /* Intentionally sharp — luxury minimal aesthetic */
+  --radius: 0.125rem;      /* rounded    — 2px  */
+  --radius-sm: 0.125rem;   /* rounded-sm — 2px  */
+  --radius-md: 0.25rem;    /* rounded-md — 4px  */
+  --radius-lg: 0.25rem;    /* rounded-lg — 4px  */
+  --radius-xl: 0.5rem;     /* rounded-xl — 8px  */
+  --radius-2xl: 0.75rem;   /* rounded-2xl— 12px */
+  --radius-full: 0.75rem;  /* rounded-full—12px (soft pill, not circular) */
+
+  /* ── Shadows ──────────────────────────────────────────────────────────── */
+  --shadow-header: 0 1px 3px 0 rgb(26 28 26 / 0.05);
+  --shadow-card-hover: 0 4px 16px 0 rgb(123 84 85 / 0.08);
+
+  /* ── Animations ───────────────────────────────────────────────────────── */
+  --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98) forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   KEYFRAMES
+───────────────────────────────────────────────────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE STYLES
+───────────────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #faf9f6;
+  color: #1a1c1a;
+  /* Reference next/font CSS var directly — @theme inline doesn't emit --font-sans */
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Selection ──────────────────────────────────────────────────────────── */
+::selection {
+  background-color: #f4c2c2;
+  color: #734e4e;
+}
+
+/* ── Focus management ───────────────────────────────────────────────────── */
+/* Remove default outline for mouse/pointer users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* WCAG 2.4.7 — visible focus indicator for keyboard users */
+:focus-visible {
+  outline: 2px solid #7b5455;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────────────── */
+/* WCAG 2.3.3 — disable all motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CUSTOM UTILITIES
+   @utility creates Tailwind-compatible custom utilities (v4 native).
+───────────────────────────────────────────────────────────────────────────── */
+
+/* Page container: max-width + centered + horizontal padding */
+@utility container-page {
+  max-width: 80rem; /* 1280px */
+  margin-inline: auto;
+  padding-inline: 1.5rem; /* grid-margin */
+}
+
+/* Label caps: uppercase Inter used throughout for section tags, nav, buttons */
+@utility text-label {
+  font-size: 0.75rem;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }

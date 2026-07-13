@@ -35,7 +35,7 @@ function ServiceCard({ item }: { item: ServiceItem }) {
 
       <div className="flex items-center justify-between pt-4 border-t border-outline-variant/30">
         <span className="text-label text-primary">
-          Desde ${item.priceFrom.toLocaleString("es-AR")}
+          Desde ${item.priceFrom.toLocaleString("es-AR")}.-
         </span>
         <span className="text-label text-on-surface-variant group-hover:text-primary transition-colors">
           Consultar →

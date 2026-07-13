@@ -15,7 +15,7 @@ export const SITE_CONFIG: SiteConfig = {
   name: "Secretos de Belleza",
   tagline: "Coloración · Corte · Tratamientos",
   whatsapp:
-    "https://wa.me/5491163632288?text=Hola!%20Quiero%20consultar%20sobre%20",
+    "https://wa.me/5493546540992?text=Hola!%20Quiero%20consultar%20sobre%20(completar)",
   whatsappDisplay: "3546 54-0992",
   address: "Villa Ciudad Parque, Córdoba, Argentina",
   instagram: "https://www.instagram.com/secretos_debelleza2/",
@@ -43,7 +43,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Corte Unisex",
     description:
       "Arquitectura capilar adaptada a tus facciones y estilo de vida.",
-    priceFrom: 45,
+    priceFrom: 14000,
     currency: "ARS",
   },
   {
@@ -51,8 +51,8 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Palette",
     title: "Coloración Premium",
     description:
-      "Técnicas de balayage, iluminaciones y color global sin amoníaco.",
-    priceFrom: 80,
+      "Color global desde $35.000.- Balayage desde $50.000.-",
+    priceFrom: 35000,
     currency: "ARS",
   },
   {
@@ -61,7 +61,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Tratamientos",
     description:
       "Rituales de cuidado intensivo para la salud del cuero cabelludo.",
-    priceFrom: 35,
+    priceFrom: 30000,
     currency: "ARS",
   },
   {
@@ -70,7 +70,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Styling",
     description:
       "Peinados para eventos o simplemente para un día especial.",
-    priceFrom: 30,
+    priceFrom: 45000,
     currency: "ARS",
   },
 ];
@@ -83,10 +83,10 @@ export const PROMOTIONS: PromoItem[] = [
   {
     id: "apertura",
     variant: "image",
-    badge: "Limitado",
-    title: "Oferta de Apertura",
+    badge: "Próximamente",
+    title: "¡Se viene algo grande!",
     description:
-      "20% de descuento en tu primer corte. Viví la experiencia por primera vez.",
+      "Estate atento: cualquier servicio incluirá corte o nutrición sin costo adicional.",
     image: {
       src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNh800AbGz_T7urrzPNhPyfAd0grZG1FWB7NyvlB7nnobIkTy6K6QE2u4DfoZbgX6m5mTJ1d7wyUObLNJ_EJ_g04dOtqhBNu0QOgpRdyoew_4tO1jpa497AllKnu8mwH-kA6MnANoie3KGomocbKe7edpqMvDYSeAWdM9c3ejWerL6AEOGcajfX7qh8bCfjAeWhFAdV_YEQSBDW0fcOf2-kPSZgBwvf_JoU2FgbZAlwIBdhrXm9OthMg",
       alt: "Herramientas profesionales de peluquería sobre superficie oscura",
@@ -145,7 +145,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       {
         label: "WhatsApp: 3546 54-0992",
-        href: "https://wa.me/5491163632288?text=Hola!%20Quiero%20consultar%20sobre%20",
+        href: "https://wa.me/5493546540992?text=Hola!%20Quiero%20consultar%20sobre%20(completar)",
         external: true,
       },
       {

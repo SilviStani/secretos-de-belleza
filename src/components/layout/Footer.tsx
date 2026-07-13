@@ -68,6 +68,17 @@ export default function Footer() {
           <p className="text-body-sm text-inverse-on-surface/40">
             © {year} {SITE_CONFIG.name}. Todos los derechos reservados.
           </p>
+          <p className="text-body-sm text-inverse-on-surface/60">
+            Diseño &amp; Desarrollo{" "}
+            <a
+              href="https://wa.me/5491163632288?text=Hola!%20Quiero%20consultar%20sobre%20Páginas%20Web"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-inverse-primary hover:text-inverse-on-surface transition-colors font-semibold"
+            >
+              Silvina_Dev
+            </a>
+          </p>
           <div className="flex items-center gap-6">
             {SOCIAL_LINKS.map((link) => (
               <a

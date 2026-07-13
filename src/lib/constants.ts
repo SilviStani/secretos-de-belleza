@@ -18,7 +18,7 @@ export const SITE_CONFIG: SiteConfig = {
     "https://wa.me/5493546540992?text=Hola!%20Quiero%20consultar%20sobre%20(completar)",
   whatsappDisplay: "3546 54-0992",
   address: "Villa Ciudad Parque, Córdoba, Argentina",
-  instagram: "https://www.instagram.com/secretos_debelleza2/",
+  instagram: "https://www.instagram.com/secretos_de_belleza_vcp/",
   // pinterest: not ready yet
 };
 
@@ -149,8 +149,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
         external: true,
       },
       {
-        label: "@secretos_debelleza2",
-        href: "https://www.instagram.com/secretos_debelleza2/",
+        label: "@secretos_de_belleza_vcp",
+        href: "https://www.instagram.com/secretos_de_belleza_vcp/",
         external: true,
       },
     ],
@@ -174,6 +174,6 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "Instagram", href: "https://www.instagram.com/secretos_debelleza2/" },
+  { label: "Instagram", href: "https://www.instagram.com/secretos_de_belleza_vcp/" },
   // { label: "Pinterest", href: "..." }, // not ready yet
 ];

@@ -44,21 +44,12 @@ export const metadata: Metadata = {
     title: "Secretos de Belleza — Coloración, Corte y Tratamientos en Córdoba",
     description:
       "Tu mejor versión, a cargo de expertos. Coloración premium, corte y tratamientos capilares en Córdoba.",
-    images: [
-      {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Secretos de Belleza — Salón de peluquería en Córdoba",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Secretos de Belleza — Coloración, Corte y Tratamientos en Córdoba",
     description:
       "Tu mejor versión, a cargo de expertos. Coloración premium, corte y tratamientos capilares en Córdoba.",
-    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -84,7 +75,7 @@ const jsonLd = {
     "Salón de peluquería en Villa Ciudad Parque, Córdoba, Argentina. Especialistas en coloración premium, corte y tratamientos capilares.",
   url: "https://secretosdebelleza.com",
   priceRange: "$$",
-  image: "https://secretosdebelleza.com/images/og-image.jpg",
+  image: "https://secretosdebelleza.com/opengraph-image",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Villa Ciudad Parque",
@@ -143,7 +134,7 @@ const jsonLd = {
       },
     ],
   },
-  sameAs: ["https://www.instagram.com/secretosdebellezaok/"],
+  sameAs: ["https://www.instagram.com/secretos_de_belleza_vcp/"],
 };
 
 export default function RootLayout({

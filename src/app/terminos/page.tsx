@@ -45,7 +45,7 @@ export default function TerminosPage() {
 
         <Section title="3. Turnos y reservas">
           <p>
-            Los links de "Consultar" redirigen a WhatsApp para coordinar un
+            Los links de *Consultar* redirigen a WhatsApp para coordinar un
             turno. La reserva se confirma únicamente cuando el salón lo
             notifica explícitamente por ese medio.
           </p>
